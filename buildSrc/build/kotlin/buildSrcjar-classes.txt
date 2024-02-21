@@ -1,0 +1,1 @@
+/Users/localuser/AndroidStudioProjects/ToDo/buildSrc/build/classes/kotlin/main/Deps.class:/Users/localuser/AndroidStudioProjects/ToDo/buildSrc/build/classes/kotlin/main/Versions.class
