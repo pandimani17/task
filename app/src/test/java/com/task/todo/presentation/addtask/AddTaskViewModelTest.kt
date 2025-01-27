@@ -1,25 +1,17 @@
 package com.task.todo.presentation.addtask
 
-import android.content.Context
-import android.net.ConnectivityManager
-import android.net.Network
-import android.net.NetworkCapabilities
 import com.task.todo.common.NetworkUtils
-import com.task.todo.common.Utilities
 import com.task.todo.domain.use_case.AddTodoLocalUseCase
 import com.task.todo.domain.use_case.PostTodoUseCase
 import com.task.todo.domain.use_case.ValidateDescriptionUSeCase
 import com.task.todo.presentation.addtask.events.AddTaskEvent
-import io.mockk.every
-import io.mockk.mockk
-import io.mockk.mockkStatic
+
 import kotlinx.coroutines.test.runTest
-import org.junit.Assert.assertFalse
+
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
-import org.mockito.Mockito
-import org.mockito.Mockito.mockStatic
+
 import org.mockito.Mockito.`when`
 import org.mockito.kotlin.any
 import org.mockito.kotlin.mock
@@ -54,7 +46,7 @@ private lateinit var  addTaskViewModel : AddTaskViewModel
 
 
     @Test
-    fun test_submitTodo()= runTest {
+    fun test_checkInternetAvailability()= runTest {
             val mockNetworkUtils : NetworkUtils = mock()
            `when` (mockNetworkUtils.isInternetAvailable(any())).thenReturn (true)
             val event = AddTaskEvent.TodoSubmitted(mock())
