@@ -3,6 +3,7 @@ package com.task.todo.presentation.addtask
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.task.todo.common.NetworkUtils
 import com.task.todo.common.Resource
 import com.task.todo.common.Utilities
 import com.task.todo.data.remote.dto.Todo
@@ -21,9 +22,10 @@ import javax.inject.Inject
 class AddTaskViewModel @Inject constructor(
     private val postTodoUseCase: PostTodoUseCase,
     private val addTodoLocalUseCase: AddTodoLocalUseCase,
-    private val validateDescription: ValidateDescriptionUSeCase
+    private val validateDescription: ValidateDescriptionUSeCase,
+    private val networkUtils: NetworkUtils,
 
-) : ViewModel() {
+    ) : ViewModel() {
 
     var state = mutableStateOf(AddTaskState())
     var internetNotAvailable = mutableStateOf(false)
@@ -37,7 +39,7 @@ class AddTaskViewModel @Inject constructor(
             }
 
             is AddTaskEvent.TodoSubmitted -> {
-                if (Utilities.isInternetAvailable(event.context)) {
+                if (networkUtils.isInternetAvailable(event.context)) {
                     submitDescription(state.value.todo)
                     internetNotAvailable.value = false
                 } else

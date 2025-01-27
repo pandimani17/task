@@ -2,6 +2,8 @@ package com.task.todo.di
 
 import android.content.Context
 import androidx.room.Room
+import com.task.todo.common.NetworkUtils
+import com.task.todo.common.Utilities
 import com.task.todo.data.local.TODOAppDatabase
 import com.task.todo.data.local.dao.TaskHistoryDao
 import com.task.todo.data.remote.ApiService
@@ -75,6 +77,10 @@ object AppModule {
     @Singleton
     fun providesTodoLocalRepository(dao: TaskHistoryDao): TodoRepositoryLocal {
         return TodoRepoLocalImpl(dao)
+    }
+    @Provides
+    fun provideNetworkUtils(): NetworkUtils {
+        return Utilities
     }
 
 }

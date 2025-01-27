@@ -6,7 +6,7 @@ import android.net.NetworkCapabilities
 import com.task.todo.data.remote.dto.Todo
 import com.task.todo.domain.model.TodoParcel
 
-object Utilities {
+object Utilities : NetworkUtils {
 
     fun toParcelable(todo: Todo): TodoParcel {
         val myParcelableObject = TodoParcel(
@@ -29,9 +29,9 @@ object Utilities {
         }
         return Todo(completed = false,id=0, todo = "", userId = 0)
     }
-    fun isInternetAvailable(context: Context): Boolean {
+    override fun isInternetAvailable(context: Context?): Boolean {
         val connectivityManager =
-            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+            context?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val nw = connectivityManager.activeNetwork ?: return false
         val actNw = connectivityManager.getNetworkCapabilities(nw) ?: return false
         return when {
@@ -45,4 +45,7 @@ object Utilities {
         }
     }
 
+}
+interface NetworkUtils {
+    fun isInternetAvailable(context: Context?): Boolean
 }

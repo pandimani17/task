@@ -84,6 +84,11 @@ dependencies {
 
 
     testImplementation (Deps.junit)
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.1.0")
+    testImplementation("org.mockito:mockito-core:5.5.0")
+    testImplementation ("io.mockk:mockk:1.12.0")
+
     androidTestImplementation (Deps.testJunit)
     androidTestImplementation (Deps.espressoCore)
     androidTestImplementation (Deps.junitCompose)
