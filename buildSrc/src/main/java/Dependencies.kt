@@ -62,10 +62,10 @@ object Versions {
     const val testManifest ="1.4.1"
 
     //Dagger-Hilt
-    const val hiltAndroid ="2.45"
-    const val hiltCompiler ="2.45"
-    const val hiltAndroidCompiler ="2.45"
-    const val hiltNavigation ="1.0.0"
+    const val hiltAndroid ="2.52"
+    const val hiltCompiler ="2.52"
+    const val hiltAndroidCompiler ="2.52"
+    const val hiltNavigation ="1.2.0"
 
     //compose dependencies
     const val composeViewModel ="2.6.1"

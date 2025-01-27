@@ -60,7 +60,7 @@ android {
 
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = "1.5.15"
     }
     packaging {
         resources {
@@ -78,8 +78,8 @@ dependencies {
     implementation (Deps.uiPreview)
     implementation (Deps.materialCompose)
 
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.2.0")
 
 
 
@@ -96,7 +96,7 @@ dependencies {
     kapt (Deps.hiltAndroidCompiler)
     implementation(Deps.hiltNavigation)
 
-    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
+    implementation(platform("androidx.compose:compose-bom:2025.01.00"))
 
 
     //compose dependencies
@@ -124,7 +124,7 @@ dependencies {
     //EncryptedSharedPreference
     implementation (Deps.sharedPreference)
 
-    implementation ("androidx.compose.material3:material3:1.2.0")
+    implementation ("androidx.compose.material3:material3:1.3.1")
 
 
     val room_version = "2.6.1"
